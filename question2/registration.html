@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Course Registration Form for Online Learning Platform" />
+  <title>Course Registration Form</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 0;
+      color: #222;
+    }
+
+    header {
+      background-color: #0b3954;
+      color: #fff;
+      text-align: center;
+      padding: 15px;
+    }
+
+    main {
+      max-width: 800px;
+      margin: 30px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    fieldset {
+      border: 2px solid #0b3954;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      padding: 15px;
+    }
+
+    legend {
+      font-weight: bold;
+      color: #0b3954;
+    }
+
+    label {
+      display: block;
+      margin: 10px 0 4px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+
+    input[type="radio"], input[type="checkbox"] {
+      width: auto;
+      margin-right: 8px;
+    }
+
+    .buttons {
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    button {
+      background-color: #0b3954;
+      color: #fff;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+      margin: 5px;
+    }
+
+    button:hover {
+      background-color: #093046;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Online Learning Platform</h1>
+    <h2>Course Registration Form</h2>
+  </header>
+
+  <main>
+    <form action="/submit-registration" method="POST" enctype="multipart/form-data">
+      
+      <!-- Personal Information -->
+      <fieldset>
+        <legend>Personal Information</legend>
+
+        <label for="fullname">Full Name<span style="color:red;">*</span></label>
+        <input type="text" id="fullname" name="fullname" placeholder="Enter your full name" required />
+
+        <label for="email">Email Address<span style="color:red;">*</span></label>
+        <input type="email" id="email" name="email" placeholder="example@email.com" required />
+
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="+91-XXXXXXXXXX" />
+
+        <label for="dob">Date of Birth</label>
+        <input type="date" id="dob" name="dob" />
+
+        <label for="photo">Profile Picture (Images only)</label>
+        <input type="file" id="photo" name="photo" accept="image/*" />
+      </fieldset>
+
+      <!-- Academic Background -->
+      <fieldset>
+        <legend>Academic Background</legend>
+
+        <label for="education">Current Education Level</label>
+        <select id="education" name="education">
+          <option value="">--Select--</option>
+          <option>High School</option>
+          <option>Bachelor's</option>
+          <option>Master's</option>
+          <option>PhD</option>
+        </select>
+
+        <label for="field">Field of Study</label>
+        <input type="text" id="field" name="field" placeholder="e.g., Computer Science" />
+
+        <label for="experience">Years of Programming Experience</label>
+        <input type="number" id="experience" name="experience" min="0" max="20" />
+      </fieldset>
+
+      <!-- Course Preferences -->
+      <fieldset>
+        <legend>Course Preferences</legend>
+
+        <p><strong>Preferred Learning Mode:</strong></p>
+        <label><input type="radio" name="mode" value="online" /> Online</label>
+        <label><input type="radio" name="mode" value="offline" /> Offline</label>
+        <label><input type="radio" name="mode" value="hybrid" /> Hybrid</label>
+
+        <p><strong>Course Categories:</strong></p>
+        <label><input type="checkbox" name="category" value="web" /> Web Development</label>
+        <label><input type="checkbox" name="category" value="mobile" /> Mobile App Development</label>
+        <label><input type="checkbox" name="category" value="data" /> Data Science</label>
+        <label><input type="checkbox" name="category" value="ai" /> AI/ML</label>
+        <label><input type="checkbox" name="category" value="devops" /> DevOps</label>
+
+        <p><strong>Preferred Schedule:</strong></p>
+        <label><input type="radio" name="schedule" value="weekdays" /> Weekdays</label>
+        <label><input type="radio" name="schedule" value="weekends" /> Weekends</label>
+        <label><input type="radio" name="schedule" value="flexible" /> Flexible</label>
+      </fieldset>
+
+      <!-- Additional Information -->
+      <fieldset>
+        <legend>Additional Information</legend>
+
+        <label for="level">Programming Experience Level (1-10)</label>
+        <input type="range" id="level" name="level" min="1" max="10" />
+
+        <label for="comments">Special Requirements or Comments</label>
+        <textarea id="comments" name="comments" rows="4" placeholder="Write here..."></textarea>
+
+        <p><strong>Preferred Contact Method:</strong></p>
+        <label><input type="radio" name="contact" value="email" /> Email</label>
+        <label><input type="radio" name="contact" value="phone" /> Phone</label>
+        <label><input type="radio" name="contact" value="sms" /> SMS</label>
+      </fieldset>
+
+      <!-- Terms and Conditions -->
+      <fieldset>
+        <legend>Terms and Conditions</legend>
+
+        <label><input type="checkbox" name="terms" required /> I agree to the Terms and Conditions</label>
+        <label><input type="checkbox" name="newsletter" /> I want to receive newsletters and updates</label>
+      </fieldset>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button type="submit">Submit Registration</button>
+        <button type="reset">Reset Form</button>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

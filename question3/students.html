@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Student Management Dashboard for Computer Science Students - Batch 2024" />
+  <title>Student Management Dashboard</title>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <style>
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: #f5f7fa;
+      margin: 0;
+      padding: 20px;
+      color: #222;
+    }
+
+    header {
+      text-align: center;
+      background-color: #0b3954;
+      color: #fff;
+      padding: 15px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      background-color: #fff;
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    caption {
+      font-weight: bold;
+      font-size: 1.3rem;
+      padding: 10px;
+      background-color: #e0f7fa;
+    }
+
+    th, td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+    }
+
+    th {
+      background-color: #0b3954;
+      color: #fff;
+    }
+
+    tfoot td {
+      font-weight: bold;
+      background-color: #f0f0f0;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    .active {
+      color: green;
+      font-weight: bold;
+    }
+
+    .inactive {
+      color: red;
+      font-weight: bold;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .summary {
+      background-color: #fff;
+      border-radius: 8px;
+      padding: 15px;
+      margin-top: 20px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+
+    .summary h2 {
+      color: #0b3954;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Student Management Dashboard</h1>
+  </header>
+
+  <section>
+    <table aria-describedby="table-summary">
+      <caption>Computer Science Students - Batch 2024</caption>
+
+      <thead>
+        <tr>
+          <th scope="col">Student ID</th>
+          <th scope="col">Student Name</th>
+          <th scope="col" colspan="2">Course Details</th>
+          <th scope="col" colspan="2">Contact Information</th>
+          <th scope="col">Semester</th>
+          <th scope="col">GPA</th>
+          <th scope="col">Status</th>
+        </tr>
+        <tr>
+          <th></th>
+          <th></th>
+          <th scope="col">Course Name</th>
+          <th scope="col">Credits</th>
+          <th scope="col">Email</th>
+          <th scope="col">Phone</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <!-- Student 1 (multiple courses using rowspan) -->
+        <tr>
+          <td rowspan="2">CS001</td>
+          <td rowspan="2">Aarav Mehta</td>
+          <td>Data Structures</td>
+          <td>4</td>
+          <td rowspan="2">aarav.mehta@example.com</td>
+          <td rowspan="2">+91-9876543210</td>
+          <td rowspan="2">Sem 5</td>
+          <td rowspan="2">3.8</td>
+          <td rowspan="2" class="active">Active</td>
+        </tr>
+        <tr>
+          <td>Database Systems</td>
+          <td>3</td>
+        </tr>
+
+        <!-- Student 2 -->
+        <tr>
+          <td>CS002</td>
+          <td>Anjali Sharma</td>
+          <td>Operating Systems</td>
+          <td>4</td>
+          <td>anjali.sharma@example.com</td>
+          <td>+91-9823012345</td>
+          <td>Sem 6</td>
+          <td>3.6</td>
+          <td class="active">Active</td>
+        </tr>
+
+        <!-- Student 3 -->
+        <tr>
+          <td>CS003</td>
+          <td>Rohan Das</td>
+          <td>Computer Networks</td>
+          <td>3</td>
+          <td>rohan.das@example.com</td>
+          <td>+91-9887765432</td>
+          <td>Sem 4</td>
+          <td>3.4</td>
+          <td class="inactive">Inactive</td>
+        </tr>
+
+        <!-- Student 4 (multiple courses) -->
+        <tr>
+          <td rowspan="2">CS004</td>
+          <td rowspan="2">Sneha Nair</td>
+          <td>Artificial Intelligence</td>
+          <td>4</td>
+          <td rowspan="2">sneha.nair@example.com</td>
+          <td rowspan="2">+91-9745647382</td>
+          <td rowspan="2">Sem 7</td>
+          <td rowspan="2">3.9</td>
+          <td rowspan="2" class="active">Active</td>
+        </tr>
+        <tr>
+          <td>Machine Learning</td>
+          <td>3</td>
+        </tr>
+
+        <!-- Student 5 -->
+        <tr>
+          <td>CS005</td>
+          <td>Vikram Patel</td>
+          <td>Web Development</td>
+          <td>3</td>
+          <td>vikram.patel@example.com</td>
+          <td>+91-9834256789</td>
+          <td>Sem 3</td>
+          <td>2.9</td>
+          <td class="inactive">Inactive</td>
+        </tr>
+
+        <!-- Student 6 -->
+        <tr>
+          <td>CS006</td>
+          <td>Priya Singh</td>
+          <td>Cybersecurity</td>
+          <td>4</td>
+          <td>priya.singh@example.com</td>
+          <td>+91-9911223344</td>
+          <td>Sem 8</td>
+          <td>3.7</td>
+          <td class="active">Active</td>
+        </tr>
+      </tbody>
+
+      <!-- Table Footer -->
+      <tfoot>
+        <tr>
+          <td colspan="2">Total Students</td>
+          <td colspan="7">6</td>
+        </tr>
+        <tr>
+          <td colspan="2">Average GPA</td>
+          <td colspan="7">3.55</td>
+        </tr>
+        <tr>
+          <td colspan="2">Active vs Inactive</td>
+          <td colspan="7">Active: 4 | Inactive: 2</td>
+        </tr>
+      </tfoot>
+    </table>
+
+    <!-- Summary Section -->
+    <div id="table-summary" class="summary">
+      <h2>Dashboard Summary</h2>
+      <p>
+        The Computer Science Batch 2024 consists of <strong>6 students</strong> currently enrolled in various semesters.
+        Among them, <strong>4 students</strong> are active and <strong>2 are inactive</strong>.
+      </p>
+      <p>
+        The average GPA across all students is approximately <strong>3.55</strong>,
+        showing a healthy academic performance overall.
+      </p>
+      <p>
+        The table above also highlights students taking multiple courses, emphasizing their academic engagement and course diversity.
+      </p>
+    </div>
+  </section>
+</body>
+</html>
